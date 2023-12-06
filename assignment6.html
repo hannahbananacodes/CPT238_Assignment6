@@ -47,31 +47,42 @@
 		<p>* Required Inormation</p>
 
 		<label for="fname">First Name *</label>
-		<input type="text" id="fname" name="fname"><br><br>
+		<input type="text" id="fname" class="fields" name="fname">
+		<span class="err-msg" id="err-fname"></span><br><br>
 
 		<label for="lname">Last Name *</label>
-		<input type="text" id="lname" name="lname"><br><br>
+		<input type="text" id="lname" name="lname">
+		<span class="err-msg" id="err-lname"></span><br><br>
 
 		<label for="saddress1">Street Address 1 *</label>
-		<input type="text" id="saddress1" name="saddress1"><br><br>
+		<input type="text" id="saddress1" name="saddress1">
+		<span class="err-msg" id="err-saddress1"></span><br><br>
 
 		<label for="saddress2">Street Address 2</label>
-		<input type="text" id="saddress2" name="saddress2"><br><br>
+		<input type="text" id="saddress2" name="saddress2">
+		<span class="err-msg" id="err-saddress2"></span><br><br>
 
 		<label for="city">City *</label>
-		<input type="text" id="city" name="city"><br><br>
+		<input type="text" id="city" class="fields" name="city">
+		<span class="err-msg" id="err-city"></span><br><br>
 
 		<label for="state">State *</label>
-		<input type="text" id="state" name="state"><br><br>
+		<input type="text" id="state" name="state">
+		<span class="err-msg" id="err-state"></span><br><br>
 
 		<label for="zip">Zip Code *</label>
-		<input type="text" id="zip" name="zip"><br><br>
+		<input type="text" id="zip" name="zip">
+		<span class="err-msg" id="err-zip"></span><br><br>
 
 		<label for="phone">Phone</label>
-		<input type="text" id="phone" name="phone"><br><br>
+		<input type="text" id="phone" name="phone">
+		<span class="err-msg" id="err-phone"></span><br><br>
 
-		<label for="email">E-Mail Address *</label>
-		<input type="text" id="email" name="email"><br><br>
+		
+		<label for="email">E-mail Address *</label>
+		<input type="text" id="email" class="fields" name="email">
+		<span class="err-msg" id="err-email"></span>
+	
 
 		<fieldset>
 			<legend>Payment Method *</legend>
@@ -86,7 +97,8 @@
 		</fieldset><br>
 
 		<label for="ccnum">Credit Card Number:</label>
-		<input type="text" id="ccnum" name="ccnum"><br><br>
+		<input type="text" id="ccnum" name="ccnum">
+		<span class="err-msg" id="err-ccnum"></span><br><br>
 
 		<label for="ccexpmonth">Expiration Month:</label>
 		<select id="ccexpmonth" name="ccexpmonth">
