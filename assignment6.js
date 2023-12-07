@@ -19,6 +19,9 @@ $(document).ready(function() {
         $msgEMail = $("#err-email"),
         $ccnum = $("#ccnum"),
         $msgCCnum = $("#err-ccnum"),
+        $ccexpyear = $("#ccexpyear")
+        $ccexpmonth = $("#ccexpmonth"),
+        $msgCCexp = $("#err-ccexp"),
         $cForm = $("#custForm");
 
     // state hint
@@ -67,6 +70,8 @@ $(document).ready(function() {
             zipPattern = /^[0-9]{5,5}$/i,
             phonePattern = /^[0-9]{10,10}$/i,
             ccPattern = /^[0-9]{16,16}$/i,
+            expyearPattern = /^[0-9]{4,4}$/i,
+            expmonthPattern = /^[0-9]{2,2}$/i,
             errors = 0,
             fieldColor = "#FFF",
             errColor = "#FDD";
@@ -119,26 +124,39 @@ $(document).ready(function() {
         // zip code
         if (!zipPattern.test($zip.val())) { 
             $zip.css("background-color", errColor);
-            $msgZip.append("Required: Must contain only letters and spaces between 2 and 20 characters!");
+            $msgZip.append("Required: Must contain a 5 number Zip Code!");
             errors += 1; 
         }
         // phone
         if ($phone.val().length > 0) {
             if (!phonePattern.test($phone.val())) { 
             $phone.css("background-color", errColor);
-            $msgPhone.append("Required: Must contain only letters, numbers, and spaces between 2 and 20 characters!");
+            $msgPhone.append("Must contain a 10 digit number with no spaces or dashes!");
             errors += 1; 
         }}
         // email
         if (!emailPattern.test($email.val())) {
             $email.css("background-color", errColor);
-            $msgEMail.append("Required: Must be a valid e-mail address");
+            $msgEMail.append("Required: Must be a valid e-mail address!");
             errors += 1;
         }
         // credit card num
-    
+        if((document.getElementById('visa').checked) || (document.getElementById('mastercard').checked) || (document.getElementById('amex').checked)) {
+            if (!ccPattern.test($ccnum.val())) { 
+            $ccnum.css("background-color", errColor);
+            $msgCCnum.append("Must contain a 16 digit number with no spaces or dashes!");
+            errors += 1; 
+            }
+            if ((!expyearPattern.test($ccexpyear.val()) && (!expmonthPattern.test($ccexpmonth.val())))) {
+                $ccexpyear.css("background-color", errColor);
+                $ccexpmonth.css("background-color", errColor);
+                $msgCCexp.append("Must select a Month and Year!");
+                errors += 1; 
+            }
+        }
+
         if (errors > 0) {
-            $cForm.prepend('<div class="err-msg">Please edit the marked fields below to fix errors.</div>');
+            $cForm.prepend('<div class="err-msg">Please edit the marked fields below to fix errors!</div>');
             event.preventDefault();
   } });
   });

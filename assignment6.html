@@ -84,15 +84,15 @@
 		<span class="err-msg" id="err-email"></span>
 	
 
-		<fieldset>
+		<fieldset id="payment">
 			<legend>Payment Method *</legend>
-			<input type="radio" id="none" name="none" checked>
+			<input type="radio" id="none" value="none" class="payment" name="payment" checked>
 			<label for="none">None</label>
-			<input type="radio" id="visa" name="visa">
+			<input type="radio" id="visa" value="visa" class="payment" name="payment">
 			<label for="visa">Visa</label>
-			<input type="radio" id="mastercard" name="mastercard">
+			<input type="radio" id="mastercard" value="mastercard" class="payment" name="payment">
 			<label for="mastercard">Master Card</label>
-			<input type="radio" id="amex" name="amex">
+			<input type="radio" id="amex" value="amex" class="payment" name="payment">
 			<label for="amex">American Express</label>
 		</fieldset><br>
 
@@ -103,32 +103,33 @@
 		<label for="ccexpmonth">Expiration Month:</label>
 		<select id="ccexpmonth" name="ccexpmonth">
 			<option value="">Month</option>
-			<option value="jan">01</option>
-			<option value="feb">02</option>
-			<option value="mar">03</option>
-			<option value="apr">04</option>
-			<option value="may">05</option>
-			<option value="jun">06</option>
-			<option value="jul">07</option>
-			<option value="aug">08</option>
-			<option value="sep">09</option>
-			<option value="oct">10</option>
-			<option value="nov">11</option>
-			<option value="dec">12</option>
+			<option value="01">01</option>
+			<option value="02">02</option>
+			<option value="03">03</option>
+			<option value="04">04</option>
+			<option value="05">05</option>
+			<option value="06">06</option>
+			<option value="07">07</option>
+			<option value="08">08</option>
+			<option value="09">09</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
 		</select>
 
 		<label for="ccexpyear">Expiration Year:</label>
 		<select id="ccexpyear" name="ccexpyear">
 			<option value="">Year</option>
-			<option value="fifteen">2015</option>
-			<option value="sixteen">2016</option>
-			<option value="seventeen">2017</option>
-			<option value="eighteen">2018</option>
-			<option value="nineteen">2019</option>
-			<option value="twenty">2020</option>
-		</select><br><br>
+			<option value="2015">2015</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018">2018</option>
+			<option value="2019">2019</option>
+			<option value="2020">2020</option>
+		</select>
+		<span class="err-msg" id="err-ccexp"></span><br><br>
 		
-		<input type="submit" value="Submit Information" name="submitinfo" id="submitinfo">
+		<input type="submit" value="Submit Information" id="submitinfo">
 
 
 
